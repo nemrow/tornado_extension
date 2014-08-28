@@ -21,7 +21,7 @@
         "http://*/*",
         "https://*/*"
       ],
-      "js": ["js/handlebars-v1.3.0.js", "js/handlebars_helpers.js", "js/jquery.min.js", "js/model.js", "js/view.js", "js/controller.js", "js/init.js", "js/css_path.js"],
+      "js": ["js/handlebars-v1.3.0.js", "js/handlebars_helpers.js", "js/jquery.min.js", "js/model.js", "js/view.js", "js/controller.js", "js/init.js", "js/templates.js", "js/css_path.js"],
       "css": ["css/content_script_style.css"],
       "run_at": "document_end"
     }

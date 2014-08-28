@@ -1,23 +1,9 @@
-<script id="image-console" type="text/x-handlebars-template">
-  <div class="image-console-shell" data-item-key="{{itemKey}}">
-    <div class="image-console-button" data-type="up">
-      <img src="{{getImageURL 'arrow-up.png'}}">
-    </div>
-    <div class="image-console-button" data-type="down">
-      <img src="{{getImageURL 'arrow-down.png'}}">
-    </div>
-    <div class="image-console-button" data-type="center">
-      <img src="{{getImageURL 'arrow-center.png'}}">
-    </div>
-    <div class="image-console-button" data-type="default">
-      <img src="{{getImageURL 'arrow-default.png'}}">
-    </div>
-  </div>
-</script>
-
-<script id="bottom-active-notification-bar" type="text/x-handlebars-template">
-  <div class="bottom-active-notification-bar">
-    <img src="{{getImageURL 'charlie_beiber.png'}}">
-    <p>Image Reprocessing Mode!</p>
-  </div>
+<script id="fuck-it-up-form" type="text/x-handlebars-template">
+  <form class="fuck-it-up-form">
+    <input type="hidden" name="content_type" value="text">
+    <input type="hidden" name="selector" value="{{selector}}">
+    <input type="hidden" name="url" value="{{url}}">
+    <textarea name="content"></textarea><br>
+    <input type="submit" value="Submit Edit">
+  </form>
 </script>
