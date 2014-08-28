@@ -55,11 +55,7 @@ Controller = {
   displayFuckedUpContent: function () {
     $.post(Model.apiPath + "page/show", {url: document.URL}, function (changes) {
       Model.data.changes = changes;
-      $.each(Model.data.changes, function () {
-        if (this.content_type == "text") {
-          $(this.selector).text(this.content);
-        }
-      })
+      View.printFuckedUpDataToPage();
     })
   }
 };
