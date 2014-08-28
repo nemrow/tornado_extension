@@ -3,8 +3,16 @@ Controller = {
     $(document).on('click', function (e) {
       var currentTarget = $(e.target);
       var currentCssPath = cssPath.getCssPath(currentTarget);
-      $(currentCssPath).css('background-color', "blue");
-      console.log(currentCssPath);
+      // Here we will need to give the user a way to change the text
+      // And then pass it into here.
+      // Rock on
+      var data = {
+        content: "This is some new test text",
+        content_type: "text",
+        selector: currentCssPath,
+        url: document.URL
+      }
+      $.post(Model.apiPath + "change/create", data)
     });
   },
 
