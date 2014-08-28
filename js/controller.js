@@ -1,32 +1,43 @@
 Controller = {
   activateClickables: function () {
-    $(document).on('click', function (e) {
-      var currentTarget = $(e.target);
-      var currentCssPath = cssPath.getCssPath(currentTarget);
-      var html = Templates.fuckItUpForm(currentCssPath, document.URL)
-      $('body').append(html);
-    });
+    $(document).bind('click', View.displayEdittingForm);
+  },
+
+  deactivateClickables: function () {
+    $(document).unbind('click', View.displayEdittingForm);
   },
 
   activateChangeSubmit: function () {
-    $(document).on('click', "fuck-it-up-form", function (e) {
-      console.log($(this).serialize());
-      // Here you will have to disable the active clicks so we can star
-      // clicking on the textarea to be able to change the text
-
-      // Then we will serize the data and send it to the change/create api
-
-      // Then we will relace the text on screen if the request is successfull
-
-      // var data = {
-      //   content: "This is some new test text",
-      //   content_type: "text",
-      //   selector: currentCssPath,
-      //   url: document.URL
-      // }
-      // $.post(Model.apiPath + "change/create", data)
+    $(document).on('submit', ".fuck-it-up-form", function (e) {
       e.preventDefault();
+      var formData = new FormData(this);
+      var changeData = $(this).serialize();
+      Controller.submitNewChange(formData);
     });
+  },
+
+  submitNewChange: function (changeData) {
+    $.ajax({
+      url: Model.apiPath + "change/create",
+      data: changeData,
+      processData: false,
+      contentType: false,
+      type: 'POST',
+      success: function(changes){
+        Model.data.changes = changes;
+        View.printFuckedUpDataToPage();
+        Controller.activateClickables();
+        View.removeEdittingForm();
+      }
+    });
+
+
+    // $.post(Model.apiPath + "change/create", changeData, function (changes) {
+    //   Model.data.changes = changes;
+    //   View.printFuckedUpDataToPage();
+    //   Controller.activateClickables();
+    //   View.removeEdittingForm();
+    // });
   },
 
   linkDeactivator: function (event) {
