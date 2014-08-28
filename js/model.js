@@ -1,6 +1,8 @@
 Model = {
   editableMode: false,
 
+  apiPath: "http://localhost:3000/api/v1/",
+
   data: {
     changes: [
       {
