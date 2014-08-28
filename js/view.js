@@ -6,6 +6,13 @@ View = {
     }).done(function(data) {
       $('body').append(data);
     });
+  },
+
+  displayBorders: function () {
+    var html = Templates.borders();
+    $('body').append(html);
+  },
+
   displayEdittingForm: function (event) {
     Controller.deactivateClickables();
     var currentTarget = $(event.target);
@@ -18,6 +25,11 @@ View = {
       $('body').append(html);
     }
   },
+
+  removeEdittingForm: function (event) {
+    $('.fuck-it-up-form').remove();
+  },
+
   printFuckedUpDataToPage: function () {
     $.each(Model.data.changes, function () {
       if (this.content_type == "text") {
