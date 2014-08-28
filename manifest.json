@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+
+  "name": "The Tornado",
+  "version": "1.0",
+
+  "permissions": [
+    "storage",
+    "tabs",
+    "http://staging.shopittome.com/*",
+    "http://localhost:3000/*"
+  ],
+
+   "background":{
+    "scripts":["js/background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": ["js/handlebars-v1.3.0.js", "js/handlebars_helpers.js", "js/jquery.min.js", "js/model.js", "js/view.js", "js/controller.js", "js/init.js", "js/css_path.js"],
+      "css": ["css/content_script_style.css"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+  "icons": {
+    "48": "images/logo_48.png",
+    "128": "images/logo_128.png"
+  },
+
+  "browser_action": {
+    "default_icon": "images/logo_19.png"
+  },
+
+  "web_accessible_resources": [
+    "images/arrow-up.png",
+    "images/arrow-down.png",
+    "images/arrow-center.png",
+    "images/arrow-default.png",
+    "images/charlie_beiber.png",
+    "images/loading-gif.gif",
+    "templates/templates.hbs"
+  ]
+}
