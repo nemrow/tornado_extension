@@ -3,6 +3,7 @@ chrome.runtime.onMessage.addListener(function(request) {
     View.loadTemplates();
     Controller.deactivateLinks();
     Controller.displayFuckedUpContent();
+    Controller.activateChangeSubmit();
     Controller.activateClickables();
   } else if (Model.editableMode == "view mode") {
     // put the site back to normal
