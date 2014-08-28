@@ -18,5 +18,13 @@ View = {
       $('body').append(html);
     }
   },
+  printFuckedUpDataToPage: function () {
+    $.each(Model.data.changes, function () {
+      if (this.content_type == "text") {
+        $(this.selector).text(this.content);
+      } else if (this.content_type == "image") {
+        $(this.selector).attr('src', this.content);
+      }
+    })
   }
 }

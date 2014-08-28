@@ -1,9 +1,19 @@
-<script id="fuck-it-up-form" type="text/x-handlebars-template">
+<script id="fuck-it-up-text-form" type="text/x-handlebars-template">
   <form class="fuck-it-up-form">
     <input type="hidden" name="content_type" value="text">
     <input type="hidden" name="selector" value="{{selector}}">
     <input type="hidden" name="url" value="{{url}}">
     <textarea name="content"></textarea><br>
+    <input type="submit" value="Submit Edit">
+  </form>
+</script>
+
+<script id="fuck-it-up-image-form" type="text/x-handlebars-template">
+  <form class="fuck-it-up-form" enctype="multipart/form-data">
+    <input type="hidden" name="content_type" value="image">
+    <input type="hidden" name="selector" value="{{selector}}">
+    <input type="hidden" name="url" value="{{url}}">
+    <input type="file" name="content"><br>
     <input type="submit" value="Submit Edit">
   </form>
 </script>
