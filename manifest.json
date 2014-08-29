@@ -11,8 +11,9 @@
     "http://localhost:3000/*"
   ],
 
-   "background":{
-    "scripts":["js/background.js"]
+   "background": {
+    "scripts": ["js/eventPage.js"],
+    "persistent": false
   },
 
   "content_scripts": [
@@ -35,7 +36,8 @@
   },
 
   "browser_action": {
-    "default_icon": "images/logo_19.png"
+    "default_icon": "images/logo_19.png",
+    "default_popup": "popup.html"
   },
 
   "web_accessible_resources": [
@@ -45,6 +47,8 @@
     "images/arrow-default.png",
     "images/charlie_beiber.png",
     "images/loading-gif.gif",
-    "templates/templates.hbs"
+    "templates/templates.hbs",
+    "css/popup_css.css",
+    "js/*"
   ]
 }
