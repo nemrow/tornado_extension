@@ -30,14 +30,6 @@ Controller = {
         View.removeEdittingForm();
       }
     });
-
-
-    // $.post(Model.apiPath + "change/create", changeData, function (changes) {
-    //   Model.data.changes = changes;
-    //   View.printFuckedUpDataToPage();
-    //   Controller.activateClickables();
-    //   View.removeEdittingForm();
-    // });
   },
 
   linkDeactivator: function (event) {
