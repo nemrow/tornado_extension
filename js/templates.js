@@ -9,6 +9,10 @@ var Templates = {
     return Templates.compileTemplate("fuck-it-up-image-form", context)
   },
 
+  borders: function () {
+    return Templates.compileTemplate("fuck-it-up-borders")
+  },
+
   compileTemplate: function (id, context) {
     var source = $("#" + id).html();
     var template = Handlebars.compile(source);

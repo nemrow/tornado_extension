@@ -7,3 +7,48 @@
   z-index: 999999999;
 }
 
+.fuck-it-up-borders {
+  background-color: blue;
+  position: fixed;
+  z-index: 9999999;
+}
+
+.fuck-it-up-borders-left {
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 5px;
+  height: 100%;
+}
+
+.fuck-it-up-borders-top {
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 5px;
+  width: 100%;
+}
+
+.fuck-it-up-borders-right {
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 5px;
+  height: 100%;
+}
+
+.fuck-it-up-borders-bottom {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+
+.fuck-it-up-borders-bottom p {
+  padding: 5px;
+  margin: 0px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
