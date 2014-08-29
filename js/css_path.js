@@ -1,12 +1,16 @@
 var cssPath = {
   generateCurrentSelector: function (identifiers) {
     if (identifiers.className) {
-      return (identifiers.tagName + "." + identifiers.className.split(' ').join('.'));
+      return (identifiers.tagName + "." + cssPath.nameCleanup(identifiers.className).split(' ').join('.'));
     } else if (identifiers.idName) {
-      return (identifiers.tagName + "#" + identifiers.idName.split(' ').join('.'));
+      return (identifiers.tagName + "#" + cssPath.nameCleanup(identifiers.idName).split(' ').join('#'));
     } else {
       return identifiers.tagName;
     };
+  },
+
+  nameCleanup: function (name) {
+    return $.trim(name).replace(/ +/g, " ");
   },
 
   generateNthChildString: function (el, currentSelector) {
