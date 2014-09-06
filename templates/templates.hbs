@@ -1,21 +1,27 @@
 <script id="fuck-it-up-text-form" type="text/x-handlebars-template">
-  <form class="fuck-it-up-form">
-    <input type="hidden" name="content_type" value="text">
-    <input type="hidden" name="selector" value="{{selector}}">
-    <input type="hidden" name="url" value="{{url}}">
-    <textarea name="content"></textarea><br>
-    <input type="submit" value="Submit Edit">
-  </form>
+  <div class="editable-popout-container">
+    <img class="tornado-logo-in-edit-form" src="{{extensionPath}}images/logo_128.png">
+    <form class="fuck-it-up-form">
+      <input type="hidden" name="content_type" value="text">
+      <input type="hidden" name="selector" value="{{selector}}">
+      <input type="hidden" name="url" value="{{url}}">
+      <textarea name="content">{{content}}</textarea><br>
+      <input type="submit" value="Fuck It Up!">
+    </form>
+  </div>
 </script>
 
 <script id="fuck-it-up-image-form" type="text/x-handlebars-template">
-  <form class="fuck-it-up-form" enctype="multipart/form-data">
-    <input type="hidden" name="content_type" value="image">
-    <input type="hidden" name="selector" value="{{selector}}">
-    <input type="hidden" name="url" value="{{url}}">
-    <input type="file" name="content"><br>
-    <input type="submit" value="Submit Edit">
-  </form>
+  <div class="editable-popout-container">
+    <img class="tornado-logo-in-edit-form" src="{{extensionPath}}images/logo_128.png">
+    <form class="fuck-it-up-form" enctype="multipart/form-data">
+      <input type="hidden" name="content_type" value="image">
+      <input type="hidden" name="selector" value="{{selector}}">
+      <input type="hidden" name="url" value="{{url}}">
+      <input type="file" name="content"><br>
+      <input type="submit" value="Submit Edit">
+    </form>
+  </div>
 </script>
 
 <script id="fuck-it-up-borders" type="text/x-handlebars-template">
@@ -23,6 +29,10 @@
   <div class="fuck-it-up-borders fuck-it-up-borders-right"></div>
   <div class="fuck-it-up-borders fuck-it-up-borders-top"></div>
   <div class="fuck-it-up-borders fuck-it-up-borders-bottom">
-    <p>Edit Mode</p>
+    <p>Fuck It Up Mode</p>
   </div>
+</script>
+
+<script id="waiting-gif" type="text/x-handlebars-template">
+  <img src="{{extensionPath}}images/charlie_sheen_drug.gif">
 </script>
