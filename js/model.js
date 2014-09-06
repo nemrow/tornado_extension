@@ -1,7 +1,7 @@
 Model = {
   editableMode: null,
 
-  apiPath: "http://localhost:3000/api/v1/",
+  apiPath: "http://tornado-extension-api.herokuapp.com/",
 
   extensionPath: function () {
     return chrome.extension.getURL('');
