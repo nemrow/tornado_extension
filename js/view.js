@@ -24,14 +24,22 @@ View = {
     var currentCssPath = cssPath.getCssPath(currentTarget);
     var currentPropName = currentTarget.prop('tagName').toLowerCase();
     if (currentPropName == "img") {
-      var html = Templates.fuckItUpImageForm(currentCssPath, document.URL)
-      $('body').append(html);
+      var html = Templates.fuckItUpImageForm(currentCssPath, document.URL, Model.extensionPath)
+      $.fancybox(html)
     } else if (View.textEditable(currentTarget)) {
-      var html = Templates.fuckItUpTextForm(currentCssPath, document.URL)
-      $('body').append(html);
+      var content = currentTarget.text();
+      var html = Templates.fuckItUpTextForm(currentCssPath, document.URL, content, Model.extensionPath)
+      $.fancybox(html)
     } else {
       alert("Can't edit this yet. Shit. Oh well, this app is pointless anyway.");
+      Controller.resetEditables();
     }
+    View.setBackgroundUrlsForCss();
+  },
+
+  setBackgroundUrlsForCss: function () {
+    var imgURL = chrome.extension.getURL("images/fancybox_overlay.png");
+    $('.fancybox-overlay').css("background", 'url(' + imgURL + ')');
   },
 
   textEditable: function (node) {
@@ -39,11 +47,15 @@ View = {
   },
 
   removeEdittingForm: function (event) {
-    $('.fuck-it-up-form').remove();
+    $.fancybox.close();
   },
 
   printFuckedUpDataToPage: function () {
+    if (!Model.data.changes) {
+      return false;
+    }
     $.each(Model.data.changes, function () {
+      console.log('s')
       if (this.content_type == "text") {
         $(this.selector).text(this.content);
       } else if (this.content_type == "image") {

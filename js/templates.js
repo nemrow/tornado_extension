@@ -1,11 +1,11 @@
 var Templates = {
-  fuckItUpTextForm: function (selector, url) {
-    var context = {selector: selector, url: url}
+  fuckItUpTextForm: function (selector, url, content, extensionPath) {
+    var context = {selector: selector, url: url, content: content, extensionPath: extensionPath}
     return Templates.compileTemplate("fuck-it-up-text-form", context)
   },
 
-  fuckItUpImageForm: function (selector, url) {
-    var context = {selector: selector, url: url}
+  fuckItUpImageForm: function (selector, url, extensionPath) {
+    var context = {selector: selector, url: url, extensionPath: extensionPath}
     return Templates.compileTemplate("fuck-it-up-image-form", context)
   },
 
@@ -18,5 +18,10 @@ var Templates = {
     var template = Handlebars.compile(source);
     var html = template(context);
     return html
+  },
+
+  waitingGif: function () {
+    var context = {extensionPath: Model.extensionPath};
+    return Templates.compileTemplate("waiting-gif", context);
   }
 }

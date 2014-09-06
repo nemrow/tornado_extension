@@ -1,7 +1,11 @@
 Model = {
-  editableMode: "off",
+  editableMode: null,
 
   apiPath: "http://localhost:3000/api/v1/",
+
+  extensionPath: function () {
+    return chrome.extension.getURL('');
+  },
 
   data: {
     changes: [

@@ -16,7 +16,14 @@ Controller = {
     });
   },
 
+  resetEditables: function () {
+    Controller.deactivateClickables();
+    View.removeEditableViews();
+    theTornado.triggerMode();
+  },
+
   submitNewChange: function (changeData) {
+    $('.editable-popout-container').html(Templates.waitingGif());
     $.ajax({
       url: Model.apiPath + "change/create",
       data: changeData,
