@@ -1,0 +1,3 @@
+== The Tornado Chrome Extension Repo
+
+The rails api for this extension is here https://github.com/nemrow/tornado_api
